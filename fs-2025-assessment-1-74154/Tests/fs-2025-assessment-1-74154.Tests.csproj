@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\fs-2025-assessment-1-74154\fs-2025-assessment-1-74154.csproj" />
+		<ProjectReference Include="..\fs-2025-assessment-1-74154.csproj" />
 	</ItemGroup>
 
 </Project>
