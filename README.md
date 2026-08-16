@@ -1,5 +1,6 @@
 # DublinBikes API - Assessment 1
 
+
 - **Student Name:** Gabriel Blauth de Araujo
 - **Student Number:** 74154
 - **Course:** Full Stack Development 2025
