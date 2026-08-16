@@ -44,7 +44,7 @@ A .NET 8 Web API with full CRUD functions, caching, real-time simulation, and du
 - Europe/Dublin local time exposed in responses
 - Defensive handling of invalid values
 
-### Code Quality & Architecture (10 marks) ✅
+### Code Quality & Architecture  ✅
 - Clear separation of concerns (Services vs Endpoints)
 - Clean naming, minimal duplication, proper DI usage
 
