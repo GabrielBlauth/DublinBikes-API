@@ -8,7 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Services
 builder.Services.AddCors(p => p.AddPolicy("AllowAll", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "DublinBikes API",
+        Version = "v1",
+        Description = "Real-time Dublin Bikes station data with Azure Cosmos DB integration"
+    });
+});
 builder.Services.AddMemoryCache();
 
 var version = builder.Configuration["ApiVersion"] ?? "V1";

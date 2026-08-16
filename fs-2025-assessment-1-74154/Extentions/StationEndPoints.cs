@@ -82,7 +82,8 @@ namespace fs_2025_assessment_1_74154.Extensions
                     hasPrevious,
                     items
                 });
-            });
+            })
+            .WithTags("Stations");
 
 
             // GET /api/stations/{number}
@@ -90,13 +91,15 @@ namespace fs_2025_assessment_1_74154.Extensions
             {
                 var station = stationService.GetStationByNumber(number);
                 return station is null ? Results.NotFound() : Results.Ok(station);
-            });
+            })
+            .WithTags("Stations");
 
             // GET /api/stations/summary
             app.MapGet("/api/stations/summary", (IStationService stationService) =>
             {
                 return Results.Ok(stationService.GetCachedSummary());
-            });
+            })
+            .WithTags("Stations");
 
             // POST /api/stations
             app.MapPost("/api/stations", (IStationService stationService, Station station) =>
@@ -112,7 +115,8 @@ namespace fs_2025_assessment_1_74154.Extensions
 
                 stationService.AddStation(station);
                 return Results.Created($"/api/stations/{station.Number}", station);
-            });
+            })
+            .WithTags("Stations");
 
             // PUT /api/stations/{number}
             app.MapPut("/api/stations/{number:int}", (IStationService stationService, int number, Station updated) =>
@@ -130,14 +134,16 @@ namespace fs_2025_assessment_1_74154.Extensions
 
                 stationService.UpdateStation(updated);
                 return Results.Ok(updated);
-            });
+            })
+            .WithTags("Stations");
 
             // DELETE /api/stations/{number}
             app.MapDelete("/api/stations/{number:int}", async (IStationService stationService, int number) =>
             {
                 var deleted = await stationService.DeleteStationAsync(number);
                 return deleted ? Results.NoContent() : Results.NotFound();
-            });
+            })
+            .WithTags("Stations");
         }
     }
 }
